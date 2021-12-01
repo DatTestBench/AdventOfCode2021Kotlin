@@ -4,6 +4,11 @@ plugins {
 
 repositories {
     mavenCentral()
+    maven { url = uri("https://jitpack.io") }
+}
+
+dependencies{
+    implementation("com.github.jkcclemens:khttp:-SNAPSHOT")
 }
 
 tasks {
