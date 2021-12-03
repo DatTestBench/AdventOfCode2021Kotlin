@@ -57,7 +57,7 @@ fun day02() {
 		return subMovement.position.x * subMovement.position.y
 	}
 
-	val day = dayHeader(object {})
+	val day = dayHeader(object {}, "Dive")
 
 	val test = parse("""
 		forward 5
@@ -72,9 +72,9 @@ fun day02() {
 
 	val input = parse(readInputOnline(2021, day))
 
-	outputTestResult(1, part1(test))
+	outputTestResult(1, part1(test), 150)
 	outputPuzzleResult(1, part1(input))
 
-	outputTestResult(2, part2(test))
+	outputTestResult(2, part2(test), 900)
 	outputPuzzleResult(2, part2(input))
 }

@@ -8,7 +8,7 @@ fun day00() {
 		return input.size
 	}
 
-	val day = dayHeader(object {})
+	val day = dayHeader(object {}, "Name")
 
 	val test = """"""
 		.trimIndent()
@@ -16,9 +16,9 @@ fun day00() {
 
 	val input = readInputOnline(2021, day)
 
-	outputTestResult(1, part1(test))
+	outputTestResult(1, part1(test), 0)
 	outputPuzzleResult(1, part1(input))
 
-	outputTestResult(2, part2(test))
+	outputTestResult(2, part2(test), 0)
 	outputPuzzleResult(2, part2(input))
 }

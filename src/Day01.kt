@@ -28,7 +28,7 @@ fun day01() {
 		return depthIncreaseCount
 	}
 
-	val day = dayHeader(object {})
+	val day = dayHeader(object {}, "Sonar Sweep")
 
 	val test = """
 		199
@@ -49,9 +49,9 @@ fun day01() {
 	val input = readInputOnline(2021, day)
 	val depthValues = input.mapNotNull { it.toIntOrNull() }
 
-	outputTestResult(1, part1(test))
+	outputTestResult(1, part1(test), 7)
 	outputPuzzleResult(1, part1(depthValues))
 
-	outputTestResult(2, part2(test))
+	outputTestResult(2, part2(test), 5)
 	outputPuzzleResult(2, part2(depthValues))
 }

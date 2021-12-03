@@ -3,4 +3,5 @@ fun main() {
 	readInputOnline(2021, 0)
 	day01()
 	day02()
+	day03()
 }
