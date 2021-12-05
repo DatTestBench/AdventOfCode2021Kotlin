@@ -1,13 +1,16 @@
 import khttp.get
 import java.io.File
 
-fun readInputOnline(year: Int, day: Int): List<String> {
-	val fileName = "${year}_${day}.txt"
-	val file = File(fileName)
-	return if (file.exists()) {
-		file
-			.readLines()
-			.filter { it.isNotBlank() }
+fun readInputOnline(year: Int, day: Int, sanitize: Boolean = true): List<String> {
+
+	val folderDir = File("inputs/")
+	folderDir.mkdir()
+
+	val file = File(folderDir, "${year}_${day}.txt")
+
+	// Super basic caching setup
+	val result = if (file.exists()) {
+		file.readLines()
 	} else {
 		val token = System.getenv("session_token")
 		val header = mapOf("Cookie" to "session=$token")
@@ -16,10 +19,10 @@ fun readInputOnline(year: Int, day: Int): List<String> {
 		val fileText = get(url, header).text
 		file.writeText(fileText)
 
-		fileText
-			.lines()
-			.filter { it.isNotBlank() }
+		fileText.lines()
 	}
+
+	return if (sanitize) result.filter { it.isNotBlank() } else result
 }
 
 fun <T> outputTestResult(testIndex: Int, testResult: T, expectedResult: T) =

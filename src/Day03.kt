@@ -69,8 +69,7 @@ fun day03() {
 	fun part2(input: List<List<Int>>): Int {
 
 		fun findOxygenRating(diagnostics: List<List<Int>>, filterIndex: Int = 0): Int {
-			val minimumThreshold =
-				if (diagnostics.size.mod(2) == 0) diagnostics.size / 2 else (diagnostics.size / 2) + 1
+			val minimumThreshold = if (diagnostics.size.mod(2) == 0) diagnostics.size / 2 else (diagnostics.size / 2) + 1
 
 			// (if > minimumThreshold) 1 most common else 0 most common
 			// 1 has precedence over 0, so >=
@@ -88,8 +87,7 @@ fun day03() {
 		}
 
 		fun findCO2Rating(diagnostics: List<List<Int>>, filterIndex: Int = 0): Int {
-			val minimumThreshold =
-				if (diagnostics.size.mod(2) == 0) diagnostics.size / 2 else (diagnostics.size / 2) + 1
+			val minimumThreshold = if (diagnostics.size.mod(2) == 0) diagnostics.size / 2 else (diagnostics.size / 2) + 1
 
 			// (if > minimumThreshold) 0 least common else 1 least common
 			// 0 has precedence over 1, so >=
@@ -109,7 +107,7 @@ fun day03() {
 		return findOxygenRating(input) * findCO2Rating(input)
 	}
 
-	val day = dayHeader(object {}, "Name")
+	val day = dayHeader(object {}, "Binary Diagnostic")
 
 	val test = """
 		00100
