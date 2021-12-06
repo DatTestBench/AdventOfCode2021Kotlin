@@ -39,6 +39,9 @@ data class Vec2i(var x: Int = 0, var y: Int = 0) {
 	 */
 	operator fun plus(vec: Vec2i) = Vec2i(x + vec.x, y + vec.y)
 	operator fun minus(vec: Vec2i) = Vec2i(x - vec.x, y - vec.y)
+
+	operator fun times(factor: Int) = Vec2i(x * factor, y * factor)
+	operator fun times(vec: Vec2i) = Vec2i(x * vec.x, y * vec.y)
 }
 
 fun dayHeader(function: Any, puzzleName: String): Int {
