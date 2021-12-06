@@ -1,9 +1,3 @@
-fun List<String>.digitToInt(): List<List<Int>> {
-	return this.map {
-		it.map { digit -> digit.digitToInt() }
-	}
-}
-
 fun day03() {
 	fun part1(input: List<List<Int>>): Int {
 

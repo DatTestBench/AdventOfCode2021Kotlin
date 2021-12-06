@@ -51,3 +51,13 @@ fun dayHeader(function: Any, puzzleName: String): Int {
 	println(" -- Day $day: $puzzleName -- ")
 	return day
 }
+
+fun List<String>.digitToInt(): List<List<Int>> {
+	return this.map {
+		it.map { digit -> digit.digitToInt() }
+	}
+}
+
+fun List<String>.toInt(): List<Int> {
+	return this.map { it.toInt() }
+}

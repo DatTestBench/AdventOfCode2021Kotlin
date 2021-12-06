@@ -41,8 +41,6 @@ fun day02() {
 		for (command in input) {
 			position.applyMovement(command)
 		}
-
-		println("Pos: $position")
 		return position.x * position.y
 	}
 
@@ -52,8 +50,6 @@ fun day02() {
 		for (command in input) {
 			subMovement.applyMovement(command)
 		}
-
-		println("Sub: $subMovement")
 		return subMovement.position.x * subMovement.position.y
 	}
 
