@@ -14,4 +14,5 @@ fun main() {
 	profileTime { day04() }
 	profileTime { day05() }
 	profileTime { day06() }
+	profileTime { day07() }
 }

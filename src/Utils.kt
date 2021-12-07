@@ -1,5 +1,6 @@
 import khttp.get
 import java.io.File
+import java.math.BigInteger
 
 fun readInputOnline(year: Int, day: Int, sanitize: Boolean = true): List<String> {
 
@@ -52,12 +53,8 @@ fun dayHeader(function: Any, puzzleName: String): Int {
 	return day
 }
 
-fun List<String>.digitToInt(): List<List<Int>> {
-	return this.map {
-		it.map { digit -> digit.digitToInt() }
-	}
-}
+fun List<String>.digitToInt(): List<List<Int>> = this.map { it.map { digit -> digit.digitToInt() } }
+fun List<String>.toInt(): List<Int> = this.map { it.toInt() }
 
-fun List<String>.toInt(): List<Int> {
-	return this.map { it.toInt() }
-}
+fun Long.toBigInt(): BigInteger = BigInteger.valueOf(this)
+fun Int.toBigInt(): BigInteger = BigInteger.valueOf(toLong())

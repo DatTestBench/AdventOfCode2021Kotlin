@@ -4,7 +4,7 @@ fun day06() {
 
 	fun processFish(startingFish: List<Int>, days: Int): BigInteger {
 
-		val workingList = MutableList(9) { BigInteger("0") }
+		val workingList = MutableList(9) { 0.toBigInt() }
 
 		for (fish in startingFish) {
 			workingList[fish]++
@@ -12,10 +12,10 @@ fun day06() {
 
 		for (day in 0 until days) {
 			val fishToSpawnOrReset = workingList[0]
-			workingList[0] = BigInteger.valueOf(0)
+			workingList[0] = 0.toBigInt()
 			for (fishTimer in 1 .. 8) {
 				workingList[fishTimer - 1] = workingList[fishTimer]
-				workingList[fishTimer] = BigInteger("0")
+				workingList[fishTimer] = 0.toBigInt()
 			}
 			workingList[8] += fishToSpawnOrReset
 			workingList[6] += fishToSpawnOrReset
@@ -43,9 +43,9 @@ fun day06() {
 		.split(",")
 		.toInt()
 
-	outputTestResult(1, part1(test), BigInteger("5934"))
+	outputTestResult(1, part1(test), 5934.toBigInt())
 	outputPuzzleResult(1, part1(input))
 
-	outputTestResult(2, part2(test), BigInteger("26984457539"))
+	outputTestResult(2, part2(test), 26984457539.toBigInt())
 	outputPuzzleResult(2, part2(input))
 }
