@@ -23,12 +23,7 @@ fun day07() {
 	fun part2(input: List<Int>): Int {
 
 		fun getFuelCost(distance: Int): Int {
-			var cost = 0
-			for (i in 0 .. distance) {
-				cost += i
-			}
-
-			return cost
+			return distance * (distance + 1) / 2
 		}
 
 		val max = input.maxOf { it }
